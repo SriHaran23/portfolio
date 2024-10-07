@@ -1,0 +1,258 @@
+:root {
+    --my-div-width: 280px; /* Default value */
+    --my-div-height: 0; /* Default value */
+    --my-section-width: calc(100vw - var(--my-div-width)); /* Remaining width of the screen */
+    --top-nav-scroll:0;
+  }
+  
+html {
+    scroll-behavior: smooth;
+}
+body{
+    overflow-x: hidden;
+    position: relative;
+}
+
+.sidebar {
+    width: var(--my-div-width); 
+    /* height: var(--my-div-height);  */
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0; /* Show sidebar by default */
+    padding: 20px;
+    color: white;  
+    background-color: #333;
+    transition: all 100ms ease-in;
+    z-index: 1;
+  }
+  #menu-toggle {
+    display: none;
+  }
+  .menu-icon {                                  
+    position: fixed;
+    top: var(--top-nav-scroll);
+    right: 30px; /* Position icon outside the sidebar */
+    transition: top 0.2s ease; /* Smooth transition */
+    /* transition: all 100ms ease-in; */
+    z-index: 2;
+  }
+  .main-nav{
+    display: inline-block;
+    color: white;
+    background-color: #333;
+    width: auto;
+    position: fixed;
+    top: var(--top-nav-scroll); 
+    left: calc(0.85 * var(--my-div-width));
+    right: 0;
+    background-color: #333;
+    transition: top 0.2s ease; /* Smooth transition */
+    z-index: 1;
+}
+#menu-toggle:checked ~ .main.nav {
+    left: calc(-1 * var(--my-div-width));
+}
+/* sidebar */
+
+.sidebar a {
+    display: block; /* Block display for links */
+    color: white; /* Link color */
+    text-decoration: none; /* No underline */
+    padding: 10px; /* Padding for links */
+    margin: 5px 0; /* Margin between links */
+    border-radius: 4px; /* Rounded corners */
+}
+.sidebar a:hover {
+    background-color: #575757; /* Hover color */
+}
+.sidebar a.active {
+    font-weight: bold;
+    color: #007bff; /* Change to your preferred active link color */
+}
+.content {
+    flex-grow: 1; /* Take up remaining space */
+    padding: 20px; /* Padding for content */
+    color: white !important;
+}
+.navbar.hidden {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+/* main-div */
+
+/* home section */
+/* .home-section{
+    background-image: url('../img/wedev-logo.jpg'); /* Replace with your image URL 
+    background-size: cover;
+    background-color: black;
+    opacity: 50%;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.home-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.home-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../img/react1.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position-y:10%;
+    background-repeat: no-repeat;
+    opacity: 0.4; /* Adjust opacity (0.0 to 1.0) */
+}
+    /* #output {
+    font-family: monospace;
+    white-space: nowrap;
+    border-right: 2px solid;
+    display: inline-block;
+    overflow: hidden;
+} */
+
+/* skills */
+.skills-p{
+    font-size: large;
+}
+
+.sidebar {
+    position: relative;
+    transition: left 0.3s ease; /* Transition for sliding effect */
+}
+
+.sidebar-hidden {
+    left: -250px; /* Hide sidebar offscreen */
+}
+
+.sections {
+    transition: margin-left 0.3s ease; /* Smooth transition for sections */
+}
+
+.full-width {
+    margin-left: 0; /* No margin when sidebar is hidden */
+}
+
+.sidebar-open {
+    margin-left: calc(-1 * var(--my-div-width)); /* Adjust margin when sidebar is open */
+}
+
+
+
+.scroll-container {
+    width: 100%; /* Full width */
+    height: 100px; /* Fixed height */
+    overflow: hidden; /* Hide overflowing images */
+    position: relative; /* Relative positioning */
+}
+
+.scroll-content {
+    display: flex; /* Flexbox for horizontal alignment */
+    justify-content: space-between;
+    animation: scroll 10s linear infinite; /* Animation for scrolling */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(10%); /* Start position */
+    }
+    100% {
+        transform: translateX(-1500px); /* Move left by original width */
+    }
+}
+
+.skill-div{
+   position: relative;
+}
+
+.skill-container {
+    position: absolute;
+    /* width: 300px; */
+    top: 25%;
+    left: 25%;
+}
+
+.orbit {
+    position: absolute;
+    border: 2px dashed #ccc; /* Visible orbit path */
+    border-radius: 50%; /* Makes it circular */
+}
+
+.revolving-image {
+    position: absolute;
+    top: 80px;
+    left: 60px;
+    animation: move 12s linear infinite; /* Continuous motion */
+}
+
+/* Set different delays for each image to create a continuous effect */
+.revolving-image:nth-child(1) { animation-delay: -0s; width: 6vw; }
+.revolving-image:nth-child(2) { animation-delay: -2s; width: 5vw; }
+.revolving-image:nth-child(3) { animation-delay: -4s; width: 6vw; }
+.revolving-image:nth-child(4) { animation-delay: -6s; width: 5vw; }
+.revolving-image:nth-child(5) { animation-delay: -8s; width: 5vw; }
+.revolving-image:nth-child(6) { animation-delay: -10s;width: 5vw; }
+
+@keyframes move {
+    0% {
+        transform: rotate(0deg) translate(150px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translate(150px) rotate(-360deg);
+    }
+}
+
+/* contact */
+.custom-box {
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    border-radius: 8px; /* Optional: rounded corners */
+  }
+
+  /* topbutton */
+  #myBtn {
+    display: none;
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    border: none;
+    color: slateblue;
+    background-color: #ffffff00;
+  }
+  #myBtn svg{
+    background-color: var(--button-color);
+    border-radius: 100%;
+  }
+  #myBtn svg:hover {
+    color: whitesmoke;
+    background-color: slateblue;
+  }
+
+  @media (max-width: 1023px) {
+    body {
+        margin: 0;
+        overflow-x: hidden; /* Hide scrollbar */
+    }
+    .custom-box{
+        width: auto;
+    }
+    .home-section::before {
+        background-position-x:50%;
+        background-position-y:55%;
+    }
+    .main-nav{
+        display: none;
+    }
+}
