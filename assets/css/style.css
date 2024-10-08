@@ -259,7 +259,10 @@ body{
         background-position-x:50%;
         background-position-y:55%;
     }
-    .main-nav{
+    .main-nav, .sidebar{
         display: none;
+    }
+    .sections{
+        margin-left: 0;
     }
 }
