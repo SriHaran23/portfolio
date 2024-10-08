@@ -20,7 +20,7 @@ body{
     position: fixed;
     top: 0;
     left: 0; /* Show sidebar by default */
-    padding: 20px;
+/*     padding: 20px; */
     color: white;  
     background-color: #333;
     transition: all 100ms ease-in;
