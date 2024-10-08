@@ -1,5 +1,5 @@
 :root {
-    --my-div-width: 280px; /* Default value */
+    --my-div-width: 235px; /* Default value */
     --my-div-height: 0; /* Default value */
     --my-section-width: calc(100vw - var(--my-div-width)); /* Remaining width of the screen */
     --top-nav-scroll:0;
@@ -15,12 +15,12 @@ body{
 
 .sidebar {
     width: var(--my-div-width); 
-    /* height: var(--my-div-height);  */
-    height: 100vh;
+    height: var(--my-div-height); 
+    /* height: 100vh; */
     position: fixed;
     top: 0;
     left: 0; /* Show sidebar by default */
-    padding: 20px;
+    /* padding: 20px; */
     color: white;  
     background-color: #333;
     transition: all 100ms ease-in;
@@ -33,6 +33,7 @@ body{
     position: fixed;
     top: var(--top-nav-scroll);
     right: 30px; /* Position icon outside the sidebar */
+    margin-top: 10px;
     transition: top 0.2s ease; /* Smooth transition */
     /* transition: all 100ms ease-in; */
     z-index: 2;
@@ -41,18 +42,20 @@ body{
     display: inline-block;
     color: white;
     background-color: #333;
-    width: auto;
+    width: var(--my-section-width);
     position: fixed;
     top: var(--top-nav-scroll); 
-    left: calc(0.85 * var(--my-div-width));
+    left: var(--my-div-width);
+    /* margin-left: calc(2 * var(--my-div-width)); */
     right: 0;
     background-color: #333;
     transition: top 0.2s ease; /* Smooth transition */
     z-index: 1;
 }
-#menu-toggle:checked ~ .main.nav {
-    left: calc(-1 * var(--my-div-width));
-}
+/* #menu-toggle:checked ~ .main.nav {
+    margin-left: calc(-1 * var(--my-div-width));
+    width: calc(var(--my-div-width) + var(--my-section-width));
+} */
 /* sidebar */
 
 .sidebar a {
@@ -96,7 +99,7 @@ body{
 
 .home-section {
     position: relative;
-    height: 100vh;
+    height: var(--my-div-height);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,27 +131,31 @@ body{
     font-size: large;
 }
 
-.sidebar {
-    position: relative;
-    transition: left 0.3s ease; /* Transition for sliding effect */
-}
-
 .sidebar-hidden {
-    left: -250px; /* Hide sidebar offscreen */
+    left: 250px; /* Hide sidebar offscreen */
 }
 
 .sections {
-    transition: margin-left 0.3s ease; /* Smooth transition for sections */
+    margin-left: var(--my-div-width); 
+    transition: margin-left 0.3s ease;
 }
 
 .full-width {
-    margin-left: 0; /* No margin when sidebar is hidden */
+    margin-left: var(--my-div-width); /* No margin when sidebar is hidden */
 }
 
 .sidebar-open {
-    margin-left: calc(-1 * var(--my-div-width)); /* Adjust margin when sidebar is open */
+    margin-left: calc(-0.01 * var(--my-div-width)); 
 }
 
+.menu-open {
+    margin-left: calc(-1 * var(--my-div-width)); 
+    width: calc(var(--my-div-width) + var(--my-section-width));
+}
+
+.menu-hidden {
+    left: 250px; /* Hide sidebar offscreen */
+}
 
 
 .scroll-container {

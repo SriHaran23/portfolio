@@ -51,18 +51,44 @@ function checkboxChanged() {
 
     if (menuToggle.checked) {
         menuLabel.setAttribute('aria-expanded', 'true');
-        sidebar.style.left = '0'; // Show sidebar
-        sections.classList.remove('sidebar-open');
-        mainNav.classList.remove('full-main-nav');
-        sections.classList.add('full-width');
-    } else {
         sidebar.style.left = `calc(-1 * var(--my-div-width))`; // Hide sidebar
         menuLabel.setAttribute('aria-expanded', 'false');
         sections.classList.remove('full-width');
-        mainNav.classList.remove('full-main-nav');
+        mainNav.classList.remove('menu-width');
         sections.classList.add('sidebar-open');
+        mainNav.classList.add('menu-open');
+    } else {
+        sidebar.style.left = '0'; // Show sidebar
+        sections.classList.remove('sidebar-open');
+        mainNav.classList.remove('menu-open');
+        mainNav.classList.add('menu-width');
+        sections.classList.add('full-width');
     }
 }
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.id;
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, {
+        threshold: 0.1 // Adjust threshold as needed
+    });
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
+
 
   
 /* offcanvas closing */
@@ -101,6 +127,17 @@ function checkboxChanged() {
             });
         });
 
+/* sidebar */
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function() {
+        // Remove active class from all links
+        document.querySelectorAll('.nav-link').forEach(item => {
+            item.classList.remove('active');
+        });
+        // Add active class to the clicked link
+        this.classList.add('active');
+    });
+});
 /* home */const names = ["Frontend Developer", "Mobile App Developer", "Responsive UI/UX Developer", "Freelancer" ];
 let currentIndex = 0;
 let currentName = "";
