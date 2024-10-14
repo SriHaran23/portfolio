@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="website developer, frontend developer, React developer, freelance web development, ReactJS, HTML, CSS, JavaScript">
+    <meta name="description" content="Expert freelance frontend developer specializing in React, HTML, CSS, and JavaScript for dynamic web solutions.">
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- <link rel="stylesheet" href="assets/js/index.js"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <title>Portfolio</title>
+    <title>Frontend Web Development Services</title>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#sidebar" data-bs-offset="70" tabindex="0">
     <div class="d-inline d-lg-none">
@@ -26,7 +28,7 @@
                 <div class="offcanvas-header">
                     <div class="d-flex align-items-center justify-content-around w-75">
                         <img src="assets/img/logo.jpg" class="rounded-circle w-25 gap-3" alt="">
-                        <h2 >My Portfolio</h2>
+                        <h2>My Portfolio</h2>
                     </div>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
@@ -39,16 +41,19 @@
                       <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#services">Services</a>
+                        <a class="nav-link" href="#skills">Skills</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                      </li>
+                      <a class="nav-link" href="#resume">Resume</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                      <a class="nav-link" href="#">Blog</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Blog</a>
                     </li>
                   </ul>
                 </div>
@@ -69,32 +74,33 @@
   
         <div id="sidebar" class="sidebar">
             <div class="d-none d-lg-block">
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center mt-3">
                     <img src="assets/img/logo.jpg" class="rounded-circle w-50" alt="">
                 </div>
                 <h2 class="d-flex justify-content-center">My Portfolio</h2>
                 <hr>
-                <div class="m-3 mt-5 fs-5">
+                <div class="m-3 fs-5">
                     <a class="nav-link active" href="#home">Home</a>
                     <a class="nav-link" href="#about">About</a>
-                    <a class="nav-link" href="#services">Services</a>
                     <a class="nav-link" href="#skills">Skills</a>
+                    <a class="nav-link" href="#resume">Resume</a>
+                    <!-- <a class="nav-link" href="#">Blog</a> -->
+                    <a class="nav-link" href="#services">Services</a>
                     <a class="nav-link" href="#contact">Contact</a>
-                    <a class="nav-link" href="#">Blog</a>
                 </div>
             </div>
         </div>
         <div class="sections w-100 position-relative">
-            <section class="bg-dark home-section position-relative" id="home">
+            <section class="home-section position-relative bg-dark" id="home">
                 <!-- <img src="assets/img/react1.jpg" style="height: 100vh;" class="home-img opacity-25" alt=""> -->
                 <div class="position-absolute start-0 ms-3 fs-6 text-light">
-                    <h1 class="fw-bolder">Sriharan Kandepalli</h1>
-                    <p class="fs-4">I'm <span id="output" class="fw-semibold"></span></p>
+                    <p class="fs-1 fw-semibold">Sriharan Kandepalli</p>
+                    <h1 class="fs-4">I'm <span id="output" class="fw-bold"></span></h1>
                 </div>
             </section>
             <section id="about">
                 <div class="mx-3 mx-lg-5">
-                    <h1>About</h1>
+                    <h3 class="fs-1 fw-semibold">About:</h3>
                     <p>I'm a freelance web developer skilled in HTML, CSS, Bootstrap, React.js, and React Native. I specialize in building responsive websites and mobile applications. I'm eager to partner with startups and small businesses to create user-friendly web solutions.</p>
                     <div class="row">
                     <div class="col-md-8">
@@ -141,53 +147,35 @@
                     </div>
                 </div>
             </section>
-            <section id="services">
-                <div class="mx-3 mx-md-5">
-                    <h1>Services:</h1>
-                    <h3 class="">Web Development</h3>
-                    <p class="">I specialize in creating responsive, user-friendly websites that not only look great but also provide seamless functionality. Whether you need a personal blog, a corporate website, or an e-commerce platform, I can bring your vision to life with the latest technologies and best practices in web development.</p>
-                    <h3 class="">React Development</h3>
-                    <p class="">As a skilled React developer, I focus on building dynamic and efficient user interfaces. I leverage the power of React to create high-performance applications that are both scalable and maintainable. From single-page applications to complex web solutions, I ensure an engaging user experience that drives results.</p>
-                    <h3 class="">What I Can Do for You:</h3>
-                    <div class=" ms-4">
-                        <p><b>Custom Website Development:</b> Tailored solutions to fit your unique needs.</p>
-                        <p><b>Responsive Design:</b> Ensuring your website looks great on any device.</p>
-                        <p><b>E-commerce Solutions:</b> Build online stores that convert visitors into customers.</p>
-                        <p><b>React Applications:</b> Develop interactive web apps that provide a smooth user experience.</p>
-                        <p><b>Maintenance & Support:</b> Ongoing support to keep your website running smoothly.</p>
-                    </div>
-                    <p class="fs-5 mt-3">Let's collaborate to transform your ideas into a reality!</p>
-                </div>
-            </section>
             <section id="skills">
                 <div class="mx-3 mx-md-5">
-                    <h1>Skills:</h1>
+                    <h3 class="fs-1 fw-semibold">Skills:</h3>
                     <div class="row">
                         <div class="d-block d-lg-none scroll-container px-4">
                             <div class="scroll-content ">
                                     <div class="d-flex align-items-center">
                                         <img src="assets/img/skill-mbl/html.png" alt="HTML">
-                                        <h1 class="mbl-font-bold">HTML</h1>
+                                        <h2 class="mbl-font-bold fs-1 fw-semibold">HTML</h2>
                                     </div>
                                     <div class="d-flex align-items-center">
                                         <img src="assets/img/skill-mbl/css.png" alt="CSS">
-                                        <h1 class="mbl-font-bold">CSS</h1>
+                                        <h2 class="mbl-font-bold fs-1 fw-semibold">CSS</h2>
                                     </div>
                                     <div class="d-flex align-items-center">
                                         <img src="assets/img/skill-mbl/javascript.png" alt="JavaScript">
-                                        <h1 class="mbl-font-bold">JavaScript</h1>
+                                        <h2 class="mbl-font-bold fs-1 fw-semibold">JavaScript</h2>
                                     </div>
                                     <div class="d-flex align-items-center">
                                         <img src="assets/img/skill-mbl/bootstrap.png" alt="Bootstrap">
-                                        <h1 class="mbl-font-bold">Bootstrap</h1>
+                                        <h2 class="mbl-font-bold fs-1 fw-semibold">Bootstrap</h2>
                                     </div>
                                     <div class="d-flex align-items-center">
                                         <img src="assets/img/skill-mbl/react.png" alt="React.js">
-                                        <h1 class="mbl-font-bold">React.js</h1>
+                                        <h2 class="mbl-font-bold fs-1 fw-semibold">React.js</h2>
                                     </div>
                                     <div class="d-flex align-items-center">
                                         <img src="assets/img/skill-mbl/react.png" alt="React Native">
-                                        <h1 class="mbl-font-bold" style="width: 180px;">React Native</h1>
+                                        <h2 class="mbl-font-bold fs-1 fw-semibold" style="width: 180px;">React Native</h2>
                                     </div>
                             </div>
                         </div>
@@ -229,22 +217,126 @@
                     </div>
                 </div>
             </section>
+            <section id="resume">
+                <div class="mx-3 mx-md-5">
+                    <h3 class="fs-1 fw-semibold">Resume:</h3>
+                    <div class="d-flex left-0 flex-wrap">
+                        <div class="d-flex justify-content-between w-100">
+                            <div class="resume-item ">
+                                <h2>Education</h2>
+                                <div class="mb-3">
+                                    <p class="mb-1"><strong>B.Tech in Electronics and Communication Engineering</strong></p>
+                                    <p class="mb-1">Aditya College of Engineering, Surrampalem</p>
+                                    <p class="mb-1">2018 - 2022</p>
+                                </div>
+                                <div class="mb-3">
+                                    <p class="mb-1"><strong>Intermediate in MPC</strong></p>
+                                    <p class="mb-1">Anjana Junior College, Pithapuram</p>
+                                    <p class="mb-1">2016 - 2018</p>
+                                </div>
+                            </div>
+                            <div class="resume-item ">
+                                <h2>Professional Experience</h2>
+                                <h4>Junior UI Developer</h4>
+                                <p class="m-2"><strong>Brugu software solutions, Hyderabad</strong></p>
+                                <p class="ms-2">[ jan 2023 - jan 2024 ]</p>
+                                <ul>
+                                    <li>Responsible for creating websites with complete responsive UI.</li>
+                                    <li>Maintain website standards and version control.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <h3><strong>Office Projocts:</strong></h3>
+                            <div class="resume-item  row row-cols-1 row-cols-md-2">
+                                <div class="project col">
+                                    <h4>1. <strong>CryptoBots AI</strong></h4>
+                                    <p class="m-2"><strong>Tech:</strong> React, JavaScript, Bootstrap</p>
+                                    <p class="m-2"><strong>Overview:</strong> AI-driven platform for cryptocurrency investment.</p>
+                                    <h4>Highlights:</h4>
+                                    <ul class="ms-3">
+                                        <li>Responsive single-page application</li>
+                                        <li>User-friendly for all experience levels</li>
+                                    </ul>
+                                </div>
+                                <div class="project col">
+                                    <h4>2. <strong>DYORAI</strong></h4>
+                                    <p class="m-2"><strong>Tech:</strong> React, JavaScript, Bootstrap</p>
+                                    <p class="m-2"><strong>Overview:</strong> AI-powered investment guidance for crypto.</p>
+                                    <h4>Highlights:</h4>
+                                    <ul class="ms-3">
+                                        <li>Seamless UI with reusable components</li>
+                                        <li>Automates investment processes</li>
+                                    </ul>
+                                </div>
+                                <div class="project col">
+                                    <h4>3. <strong>RGCA </strong><b class="fs-5">(Rajiv Gandhi Centre for Aquaculture)</b></h4>
+                                    <p class="m-2"><strong>Tech:</strong> React.js, Material UI</p>
+                                    <p class="m-2"><strong>Overview:</strong> Enhancing RGCA's online presence.</p>
+                                    <h4>Highlights:</h4>
+                                    <ul class="ms-3">
+                                        <li>Responsive design</li>
+                                        <li>Resolved key usability issues</li>
+                                    </ul>
+                                </div>
+                                <div class="project col">
+                                    <h4>4. <strong>NFT Marketplace</strong></h4>
+                                    <p class="m-2"><strong>Tech:</strong> React, JavaScript, Web3</p>
+                                    <p class="m-2"><strong>Overview:</strong> Create and trade NFTs easily.</p>
+                                    <h4>Highlights:</h4>
+                                    <ul class="ms-3">
+                                        <li>Fully responsive interface</li>
+                                        <li>Supports multiple file types</li>
+                                    </ul>
+                                </div>
+                                <div class="project col">
+                                    <h4>5. <strong>Brugu App</strong></h4>
+                                    <p class="m-2"><strong>Tech:</strong> React Native</p>
+                                    <p class="m-2"><strong>Overview:</strong> A visually appealing mobile app.</p>
+                                    <h4>Highlights:</h4>
+                                    <ul class="ms-3">
+                                        <li>User-friendly design</li>
+                                        <li>Comprehensive functionalities</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="resume-item ">
+                            <h2 class="mb-2">Career Goals</h2>
+                            <p class="mb-2">Aiming to deepen expertise in frontend development, advance to a senior role, mentor others, and specialize in performance optimization while working on impactful projects.</p>
+                        </div>
+                        <div class="resume-item ">
+                            <h2 class="mb-2">Interests</h2>
+                            <p class="mb-2">Excited about exploring new technologies, improving web development skills, and sharing knowledge with the community.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="services">
+                <div class="mx-3 mx-md-5">
+                    <h3 class="fs-1 fw-semibold">Services:</h3>
+                    <h3 class="">Web Development</h3>
+                    <p class="">I specialize in creating responsive, user-friendly websites that not only look great but also provide seamless functionality. Whether you need a personal blog, a corporate website, or an e-commerce platform, I can bring your vision to life with the latest technologies and best practices in web development.</p>
+                    <h3 class="">React Development</h3>
+                    <p class="">As a skilled React developer, I focus on building dynamic and efficient user interfaces. I leverage the power of React to create high-performance applications that are both scalable and maintainable. From single-page applications to complex web solutions, I ensure an engaging user experience that drives results.</p>
+                    <h3 class="">What I Can Do for You:</h3>
+                    <div class=" ms-4">
+                        <p><b>Custom Website Development:</b> Tailored solutions to fit your unique needs.</p>
+                        <p><b>Responsive Design:</b> Ensuring your website looks great on any device.</p>
+                        <p><b>E-commerce Solutions:</b> Build online stores that convert visitors into customers.</p>
+                        <p><b>React Applications:</b> Develop interactive web apps that provide a smooth user experience.</p>
+                        <p><b>Maintenance & Support:</b> Ongoing support to keep your website running smoothly.</p>
+                    </div>
+                    <p class="fs-5 mt-3">Let's collaborate to transform your ideas into a reality!</p>
+                </div>
+            </section>
             <section id="contact">
                 <div class="mx-3 mx-md-5">
-                    <h1>Contact Me:</h1>
+                    <h3 class="fs-1 fw-semibold">Contact Me:</h3>
                     <div class="row row-cols-1 row-cols-lg-2">
                         <div class="col my-2">
                             <div class="custom-box m-1 mt-5 m-lg-2 p-4 h-100">
                                 <div class="card-body">
-                                    <div class="d-flex align-items-center my-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
-                                        </svg>
-                                        <div class="fs-5">
-                                            <h4 class="ps-3">Address:</h4>
-                                            <p class="ps-3">Pithapuram,Kakinada District, Andhra Pradesh, India - 533450</p>
-                                        </div>
-                                    </div>
                                     <div class="d-flex align-items-center my-2">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-telephone-inbound-fill" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877zM15.854.146a.5.5 0 0 1 0 .708L11.707 5H14.5a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 1 0v2.793L15.146.146a.5.5 0 0 1 .708 0"/>
@@ -255,38 +347,76 @@
                                         </div>
                                     </div>
                                     <div class="d-flex align-items-center my-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-at" viewBox="0 0 16 16">
+                                            <path d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914"/>
+                                          </svg>
+                                        <div class="fs-5">
+                                            <h4 class="ps-3">EMail</h4>
+                                            <p class="ps-3">sriharankandepalli@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center my-2">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                                             <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
                                         </svg>
                                         <div class="fs-5">
-                                            <h4 class="ps-3">Address</h4>
+                                            <h4 class="ps-3">Address:</h4>
                                             <p class="ps-3">Pithapuram,Kakinada District, Andhra Pradesh, India - 533450</p>
                                         </div>
                                     </div>
+                                    <div class="fs-5">
+                                        <h4 class="ps-3">Social Links:</h4>
+                                        <div class="social-icons m-3">
+                                            <a href="https://t.me/Sriharan_23" target="_blank">
+                                                <img src="assets/img/social/telegram.jpeg" alt="Telegram" class="icon">
+                                            </a>
+                                            <a href="https://wa.me/+919347281809" target="_blank">
+                                                <img src="assets/img/social/whatsapp.jpeg" alt="WhatsApp" class="icon">
+                                            </a>
+                                            <!-- <a href="https://www.instagram.com" target="_blank">
+                                                <img src="assets/img/social/telegram.png" alt="Instagram" class="icon">
+                                            </a> -->
+                                            <a href="https://www.linkedin.com/in/sriharan-kandepalli-432aa4228" target="_blank">
+                                                <img src="assets/img/social/linkedin.jpg" alt="LinkedIn" class="icon">
+                                            </a>
+                                            <a href="https://www.instagram.com/sriharan_23" target="_blank">
+                                                <img src="assets/img/social/instagram.jpg" alt="Instagram" class="icon">
+                                            </a>
+                                            <a href="https://www.linkedin.com/in/sriharan-kandepalli-432aa4228" target="_blank">
+                                                <img src="assets/img/social/x.jpeg" alt="LinkedIn" class="icon">
+                                            </a>
+                                        </div>
+                                        <!-- <div class="d-flex ">
+                                            <img class="w-50" src="assets/img/social/telegram.png" alt="">
+                                            <img class="w-50" src="assets/img/social/telegram.png" alt="">
+                                            <img class="w-50" src="assets/img/social/telegram.png" alt="">
+                                            <img class="w-50" src="assets/img/social/telegram.png" alt="">
+                                        </div> -->
+                                    </div>
                                 </div>
-                              </div>                           
+                            </div>                           
                         </div>
                         <div class="col my-2">
                             <div class="custom-box m-1 mt-5 m-lg-2 p-4 h-100">
                                 <div class="card-body">
                                     <form id="contact-form">
                                         <div class="m-2">
-                                            <label class="fs-4" for="name-field">Your Name:</label>
+                                            <label class="fs-5" for="name-field">Your Name:</label>
                                             <input class="form-control" type="text" name="name" id="name-field" required>
                                         </div>
                                 
                                         <div class="m-2">
-                                            <label class="fs-4" for="email-field">Your Email:</label>
+                                            <label class="fs-5" for="email-field">Your Email:</label>
                                             <input class="form-control" type="email" name="email" id="email-field" required>
                                         </div>
                                 
                                         <div class="m-2">
-                                            <label class="fs-4" for="subject-field">Subject:</label>
+                                            <label class="fs-5" for="subject-field">Subject:</label>
                                             <input class="form-control" type="text" name="subject" id="subject-field" required>
                                         </div>
                                 
                                         <div class="m-2">
-                                            <label class="fs-4" for="message-field">Message:</label>
+                                            <label class="fs-5" for="message-field">Message:</label>
                                             <textarea class="form-control" name="message" rows="5" id="message-field" required></textarea>
                                         </div>
                                 
@@ -300,8 +430,8 @@
                     </div>
                 </div>
             </section>
-            <div style="height: 200px;">
-            </div>
+            <!-- <div style="height: 100px;">
+            </div> -->
             <button onclick="topFunction()" id="myBtn" title="Go to top">
                 <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
@@ -336,7 +466,6 @@
             // console.log("navbarScroll",navbarScroll);
         }
                 }
-
                 navScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For mobile or negative scrolling
             });
         }

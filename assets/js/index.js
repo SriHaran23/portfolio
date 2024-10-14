@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, {
-        threshold: 0.1 // Adjust threshold as needed
+        threshold: 0.5 // Adjust threshold as needed
     });
     sections.forEach(section => {
         observer.observe(section);
@@ -128,16 +128,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
 /* sidebar */
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', function() {
-        // Remove active class from all links
-        document.querySelectorAll('.nav-link').forEach(item => {
-            item.classList.remove('active');
-        });
-        // Add active class to the clicked link
-        this.classList.add('active');
-    });
-});
+// document.querySelectorAll('.nav-link').forEach(link => {
+//     link.addEventListener('click', function() {
+//         // Remove active class from all links
+//         document.querySelectorAll('.nav-link').forEach(item => {
+//             item.classList.remove('active');
+//         });
+//         // Add active class to the clicked link
+//         this.classList.add('active');
+//     });
+// });
 /* home */const names = ["Frontend Developer", "Mobile App Developer", "Responsive UI/UX Developer", "Freelancer" ];
 let currentIndex = 0;
 let currentName = "";
