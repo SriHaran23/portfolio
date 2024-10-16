@@ -6,6 +6,8 @@
     <meta name="keywords" content="website developer, frontend developer, React developer, freelance web development, ReactJS, HTML, CSS, JavaScript">
     <meta name="description" content="Expert freelance frontend developer specializing in React, HTML, CSS, and JavaScript for dynamic web solutions.">
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- GLightbox CSS -->
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <!-- <link rel="stylesheet" href="assets/js/index.js"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -60,383 +62,483 @@
               </div>
             </div>
         </nav>
-        </div>
-    <div class="d-flex">
-        <div class="main-nav ">
-            <h3 class="m-0 p-2 pb-3 text-info">Sriharan Kandepalli</h3>
-            <input type="checkbox" id="menu-toggle" onchange="checkboxChanged()" />
-            <label for="menu-toggle" class="menu-icon " aria-expanded="false">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-list text-info" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-                </svg>
-            </label>
-        </div>
-  
-        <div id="sidebar" class="sidebar">
-            <div class="d-none d-lg-block">
-                <div class="d-flex justify-content-center mt-3">
-                    <img src="assets/img/logo.jpg" class="rounded-circle w-50" alt="">
-                </div>
-                <h2 class="d-flex justify-content-center">My Portfolio</h2>
-                <hr>
-                <div class="m-3 fs-5">
-                    <a class="nav-link active" href="#home">Home</a>
-                    <a class="nav-link" href="#about">About</a>
-                    <a class="nav-link" href="#skills">Skills</a>
-                    <a class="nav-link" href="#resume">Resume</a>
-                    <!-- <a class="nav-link" href="#">Blog</a> -->
-                    <a class="nav-link" href="#services">Services</a>
-                    <a class="nav-link" href="#contact">Contact</a>
+    </div>
+        <div class="position-relative">
+            <div class="d-flex position-relative">
+            <div class="main-nav ">
+                <h3 class="m-0 p-2 pb-3 text-info">Sriharan Kandepalli</h3>
+                <input type="checkbox" id="menu-toggle" onchange="checkboxChanged()" />
+                <label for="menu-toggle" class="menu-icon " aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-list text-info" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                    </svg>
+                </label>
+            </div>
+    
+            <div id="sidebar" class="sidebar">
+                <div class="d-none d-lg-block">
+                    <div class="d-flex justify-content-center mt-3">
+                        <img src="assets/img/logo.jpg" class="rounded-circle w-50" alt="">
+                    </div>
+                    <h2 class="d-flex justify-content-center">My Portfolio</h2>
+                    <hr>
+                    <div class="m-3 fs-5" id="nav">
+                        <!-- <a class="nav-link active" href="#home">Home</a>
+                        <a onclick="closeNav()" class="nav-link" href="#about">About</a>
+                        <a onclick="closeNav()" class="nav-link" href="#skills">Skills</a>
+                        <a onclick="closeNav()" class="nav-link" href="#resume">Resume</a>
+                        <a onclick="closeNav()" class="nav-link" href="#">Blog</a>
+                        <a onclick="closeNav()" class="nav-link" href="#services">Services</a>
+                        <a onclick="closeNav()" class="nav-link" href="#contact">Contact</a> -->
+                        <a id="dynamicLink" class="nav-link active" href="#home">Home</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="sections w-100 position-relative">
-            <section class="home-section position-relative bg-dark" id="home">
-                <!-- <img src="assets/img/react1.jpg" style="height: 100vh;" class="home-img opacity-25" alt=""> -->
-                <div class="position-absolute start-0 ms-3 fs-6 text-light">
-                    <p class="fs-1 fw-semibold">Sriharan Kandepalli</p>
-                    <h1 class="fs-4">I'm <span id="output" class="fw-bold"></span></h1>
-                </div>
-            </section>
-            <section id="about">
-                <div class="mx-3 mx-lg-5">
-                    <h3 class="fs-1 fw-semibold">About:</h3>
-                    <p>I'm a freelance web developer skilled in HTML, CSS, Bootstrap, React.js, and React Native. I specialize in building responsive websites and mobile applications. I'm eager to partner with startups and small businesses to create user-friendly web solutions.</p>
-                    <div class="row">
-                    <div class="col-md-8">
-                        <b class="fs-4">UI/UX Designer & Web Developer:</b>
-                        <div class="row row-cols-1 row-cols-lg-2 mt-4  fw-semibold">
-                            <div class="info-item col px-0 py-3">
-                                <img width="40px" src="https://img.icons8.com/ios-filled/50/000000/birthday-cake.png" alt="Birthday Icon">
-                                <span><p class="d-inline fw-bold">Birthday:</p> 23 April, 2001</span>
-                            </div>
-                            <!-- <div class="info-item col px-0 py-3">
-                                <img width="40px" src="https://img.icons8.com/ios-filled/50/000000/worldwide-location.png" alt="Website Icon">
-                                <span><p class="d-inline fw-bold">Website:</p> <a href="http://www.example.com">www.example.com</a></span>
-                            </div> -->
-                            <div class="info-item col px-0 py-3">
-                                <img width="40px" src="https://img.icons8.com/ios-filled/50/000000/phone.png" alt="Phone Icon">
-                                <span><p class="d-inline fw-bold">Phone:</p> +91 93472 81809</span>
-                            </div>
-                            <div class="info-item col px-0 py-3">
-                                <img width="40px" src="https://img.icons8.com/ios-filled/50/000000/age.png" alt="Age Icon">
-                                <span><p class="d-inline fw-bold">Age:</p> 23</span>
-                            </div>
-                            <div class="info-item col px-0 py-3">
-                                <img width="40px" src="https://img.icons8.com/ios-filled/50/000000/city.png" alt="City Icon">
-                                <span><p class="d-inline fw-bold">City:</p> Andhra Pradesh, India</span>
-                            </div>
-                            <div class="info-item col px-0 py-3">
-                                <img width="40px" src="assets/img/college.png" alt="Degree Icon">
-                                <span><p class="d-inline fw-bold">Degree:</p> BTech</span>
-                            </div>
-                            <div class="info-item col px-0 py-3">
-                                <img width="40px" src="https://img.icons8.com/ios-filled/50/000000/email.png" alt="Email Icon">
-                                <span><p class="d-inline fw-bold">Email:</p> <a href="mailto:sriharankandepalli@gmail.com">sriharankandepalli@gmail.com</a></span>
-                            </div>
-                            <div class="info-item col px-0 py-3">
-                                <img width="40px" src="assets/img/freelance.png" alt="Freelance Icon">
-                                <span><p class="d-inline fw-bold">Freelance:</p> Available</span>
-                            </div>
-                        </div>
-                    </div>  
-                    <div class="col-md-4 d-flex justify-content-center align-items-center">
-                        <img src="assets/img/mypic.jpeg" class="rounded-5 w-75" alt="">
+            <div id="section" class="sections w-100 position-relative">
+                <section class="home-section position-relative bg-dark" id="home">
+                    <!-- <img src="assets/img/react1.jpg" style="height: 100vh;" class="home-img opacity-25" alt=""> -->
+                    <div class="position-absolute start-0 ms-3 fs-6 text-light">
+                        <p class="fs-1 fw-semibold">Sriharan Kandepalli</p>
+                        <h1 class="fs-4">I'm <span id="output" class="fw-bold"></span></h1>
                     </div>
-                    <p class="my-4">I create responsive websites that provide exceptional user experiences for startups and small businesses. By leveraging modern technologies and focusing on collaboration, I ensure your site looks great and functions seamlessly on any device. Let's work together to bring your vision to life!</p>
-                    </div>
-                </div>
-            </section>
-            <section id="skills">
-                <div class="mx-3 mx-md-5">
-                    <h3 class="fs-1 fw-semibold">Skills:</h3>
-                    <div class="row">
-                        <div class="d-block d-lg-none scroll-container px-4">
-                            <div class="scroll-content ">
-                                    <div class="d-flex align-items-center">
-                                        <img src="assets/img/skill-mbl/html.png" alt="HTML">
-                                        <h2 class="mbl-font-bold fs-1 fw-semibold">HTML</h2>
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                        <img src="assets/img/skill-mbl/css.png" alt="CSS">
-                                        <h2 class="mbl-font-bold fs-1 fw-semibold">CSS</h2>
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                        <img src="assets/img/skill-mbl/javascript.png" alt="JavaScript">
-                                        <h2 class="mbl-font-bold fs-1 fw-semibold">JavaScript</h2>
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                        <img src="assets/img/skill-mbl/bootstrap.png" alt="Bootstrap">
-                                        <h2 class="mbl-font-bold fs-1 fw-semibold">Bootstrap</h2>
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                        <img src="assets/img/skill-mbl/react.png" alt="React.js">
-                                        <h2 class="mbl-font-bold fs-1 fw-semibold">React.js</h2>
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                        <img src="assets/img/skill-mbl/react.png" alt="React Native">
-                                        <h2 class="mbl-font-bold fs-1 fw-semibold" style="width: 180px;">React Native</h2>
-                                    </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-8 skills-p mt-2">
-                            <ul>
-                                <li>
-                                    <p class="mb-0"><b>HTML: </b>Proficient in writing clean and semantic HTML, ensuring that web pages are well-structured and optimized for search engines and accessibility standards.</p>
-                                </li>
-                                <li>
-                                    <p class="mb-0"><b>CSS: </b>Experienced in styling responsive web applications, using techniques like Flexbox and Grid to create visually appealing and user-friendly designs.</p>
-                                </li>
-                                <li>
-                                    <p class="mb-0"><b>BootStrap: </b>Skilled in utilizing the Bootstrap framework to rapidly develop mobile-first, responsive websites while maintaining a consistent look and feel.</p>
-                                </li>
-                                <li>
-                                    <p class="mb-0"><b>JavaScript: </b>Strong understanding of core JavaScript concepts, enabling the creation of interactive features and enhancing user experiences through dynamic content.</p>
-                                </li>
-                                <li>
-                                    <p class="mb-0"><b>React JS: </b>Competent in building robust user interfaces with React, focusing on component-based architecture, state management, and optimizing performance for large applications.</p>
-                                </li>
-                                <li>
-                                    <p class="mb-0"><b>React Native: </b>Knowledgeable in developing cross-platform mobile applications using React Native, emphasizing code reusability and delivering a smooth user experience across iOS and Android.</p>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="d-none d-lg-block col-4 skill-div">
-                            <div class="skill-container">
-                                <div class="orbit">
-                                    <img class="revolving-image rounded-4" src="assets/img/skills/html.png" alt="HTML" />
-                                    <img class="revolving-image rounded-4" src="assets/img/skills/css.png" alt="CSS" />
-                                    <img class="revolving-image rounded-4" src="assets/img/skills/bootstrap.png" alt="Bootstrap" />
-                                    <img class="revolving-image rounded-4" src="assets/img/skills/js.png" alt="JavaScript" />
-                                    <img class="revolving-image rounded-4" src="assets/img/skills/react.jpeg" alt="React.js" />
-                                    <img class="revolving-image rounded-4" src="assets/img/skills/reactnative.png" alt="React Native" />
+                </section>
+                <section id="about">
+                    <div class="mx-3 mx-lg-5">
+                        <h3 class="fs-1 fw-semibold">About:</h3>
+                        <p>I'm a freelance web developer skilled in HTML, CSS, Bootstrap, React.js, and React Native. I specialize in building responsive websites and mobile applications. I'm eager to partner with startups and small businesses to create user-friendly web solutions.</p>
+                        <div class="row">
+                        <div class="col-md-8">
+                            <b class="fs-4">UI/UX Designer & Web Developer:</b>
+                            <div class="row row-cols-1 row-cols-lg-2 mt-4  fw-semibold">
+                                <div class="info-item col px-0 py-3">
+                                    <img width="40px" src="https://img.icons8.com/ios-filled/50/000000/birthday-cake.png" alt="Birthday Icon">
+                                    <span><p class="d-inline fw-bold">Birthday:</p> 23 April, 2001</span>
                                 </div>
-                                <img width="90%" class="central-image rounded-circle" src="assets/img/skills/dev.jpeg" alt="Central Image" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="resume">
-                <div class="mx-3 mx-md-5">
-                    <h3 class="fs-1 fw-semibold">Resume:</h3>
-                    <div class="d-flex left-0 flex-wrap">
-                        <div class="d-flex justify-content-between w-100">
-                            <div class="resume-item ">
-                                <h2>Education</h2>
-                                <div class="mb-3">
-                                    <p class="mb-1"><strong>B.Tech in Electronics and Communication Engineering</strong></p>
-                                    <p class="mb-1">Aditya College of Engineering, Surrampalem</p>
-                                    <p class="mb-1">2018 - 2022</p>
+                                <!-- <div class="info-item col px-0 py-3">
+                                    <img width="40px" src="https://img.icons8.com/ios-filled/50/000000/worldwide-location.png" alt="Website Icon">
+                                    <span><p class="d-inline fw-bold">Website:</p> <a href="http://www.example.com">www.example.com</a></span>
+                                </div> -->
+                                <div class="info-item col px-0 py-3">
+                                    <img width="40px" src="https://img.icons8.com/ios-filled/50/000000/phone.png" alt="Phone Icon">
+                                    <span><p class="d-inline fw-bold">Phone:</p> +91 93472 81809</span>
                                 </div>
-                                <div class="mb-3">
-                                    <p class="mb-1"><strong>Intermediate in MPC</strong></p>
-                                    <p class="mb-1">Anjana Junior College, Pithapuram</p>
-                                    <p class="mb-1">2016 - 2018</p>
+                                <div class="info-item col px-0 py-3">
+                                    <img width="40px" src="https://img.icons8.com/ios-filled/50/000000/age.png" alt="Age Icon">
+                                    <span><p class="d-inline fw-bold">Age:</p> 23</span>
+                                </div>
+                                <div class="info-item col px-0 py-3">
+                                    <img width="40px" src="https://img.icons8.com/ios-filled/50/000000/city.png" alt="City Icon">
+                                    <span><p class="d-inline fw-bold">City:</p> Andhra Pradesh, India</span>
+                                </div>
+                                <div class="info-item col px-0 py-3">
+                                    <img width="40px" src="assets/img/college.png" alt="Degree Icon">
+                                    <span><p class="d-inline fw-bold">Degree:</p> BTech</span>
+                                </div>
+                                <div class="info-item col px-0 py-3">
+                                    <img width="40px" src="https://img.icons8.com/ios-filled/50/000000/email.png" alt="Email Icon">
+                                    <span><p class="d-inline fw-bold">Email:</p> <a href="mailto:sriharankandepalli@gmail.com">sriharankandepalli@gmail.com</a></span>
+                                </div>
+                                <div class="info-item col px-0 py-3">
+                                    <img width="40px" src="assets/img/freelance.png" alt="Freelance Icon">
+                                    <span><p class="d-inline fw-bold">Freelance:</p> Available</span>
                                 </div>
                             </div>
-                            <div class="resume-item ">
-                                <h2>Professional Experience</h2>
-                                <h4>Junior UI Developer</h4>
-                                <p class="m-2"><strong>Brugu software solutions, Hyderabad</strong></p>
-                                <p class="ms-2">[ jan 2023 - jan 2024 ]</p>
+                        </div>  
+                        <div class="col-md-4 d-flex justify-content-center align-items-center">
+                            <img src="assets/img/mypic.jpeg" class="rounded-5 w-75" alt="">
+                        </div>
+                        <p class="my-4">I create responsive websites that provide exceptional user experiences for startups and small businesses. By leveraging modern technologies and focusing on collaboration, I ensure your site looks great and functions seamlessly on any device. Let's work together to bring your vision to life!</p>
+                        </div>
+                    </div>
+                </section>
+                <section id="skills">
+                    <div class="mx-3 mx-md-5">
+                        <h3 class="fs-1 fw-semibold">Skills:</h3>
+                        <div class="row">
+                            <div class="d-block d-lg-none scroll-container px-4">
+                                <div class="scroll-content ">
+                                        <div class="d-flex align-items-center">
+                                            <img src="assets/img/skill-mbl/html.png" alt="HTML">
+                                            <h2 class="mbl-font-bold fs-1 fw-semibold">HTML</h2>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <img src="assets/img/skill-mbl/css.png" alt="CSS">
+                                            <h2 class="mbl-font-bold fs-1 fw-semibold">CSS</h2>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <img src="assets/img/skill-mbl/javascript.png" alt="JavaScript">
+                                            <h2 class="mbl-font-bold fs-1 fw-semibold">JavaScript</h2>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <img src="assets/img/skill-mbl/bootstrap.png" alt="Bootstrap">
+                                            <h2 class="mbl-font-bold fs-1 fw-semibold">Bootstrap</h2>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <img src="assets/img/skill-mbl/react.png" alt="React.js">
+                                            <h2 class="mbl-font-bold fs-1 fw-semibold">React.js</h2>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <img src="assets/img/skill-mbl/react.png" alt="React Native">
+                                            <h2 class="mbl-font-bold fs-1 fw-semibold" style="width: 180px;">React Native</h2>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-8 skills-p mt-2">
                                 <ul>
-                                    <li>Responsible for creating websites with complete responsive UI.</li>
-                                    <li>Maintain website standards and version control.</li>
+                                    <li>
+                                        <p class="mb-0"><b>HTML: </b>Proficient in writing clean and semantic HTML, ensuring that web pages are well-structured and optimized for search engines and accessibility standards.</p>
+                                    </li>
+                                    <li>
+                                        <p class="mb-0"><b>CSS: </b>Experienced in styling responsive web applications, using techniques like Flexbox and Grid to create visually appealing and user-friendly designs.</p>
+                                    </li>
+                                    <li>
+                                        <p class="mb-0"><b>BootStrap: </b>Skilled in utilizing the Bootstrap framework to rapidly develop mobile-first, responsive websites while maintaining a consistent look and feel.</p>
+                                    </li>
+                                    <li>
+                                        <p class="mb-0"><b>JavaScript: </b>Strong understanding of core JavaScript concepts, enabling the creation of interactive features and enhancing user experiences through dynamic content.</p>
+                                    </li>
+                                    <li>
+                                        <p class="mb-0"><b>React JS: </b>Competent in building robust user interfaces with React, focusing on component-based architecture, state management, and optimizing performance for large applications.</p>
+                                    </li>
+                                    <li>
+                                        <p class="mb-0"><b>React Native: </b>Knowledgeable in developing cross-platform mobile applications using React Native, emphasizing code reusability and delivering a smooth user experience across iOS and Android.</p>
+                                    </li>
                                 </ul>
                             </div>
-                        </div>
-                        <div>
-                            <h3><strong>Office Projocts:</strong></h3>
-                            <div class="resume-item  row row-cols-1 row-cols-md-2">
-                                <div class="project col">
-                                    <h4>1. <strong>CryptoBots AI</strong></h4>
-                                    <p class="m-2"><strong>Tech:</strong> React, JavaScript, Bootstrap</p>
-                                    <p class="m-2"><strong>Overview:</strong> AI-driven platform for cryptocurrency investment.</p>
-                                    <h4>Highlights:</h4>
-                                    <ul class="ms-3">
-                                        <li>Responsive single-page application</li>
-                                        <li>User-friendly for all experience levels</li>
-                                    </ul>
-                                </div>
-                                <div class="project col">
-                                    <h4>2. <strong>DYORAI</strong></h4>
-                                    <p class="m-2"><strong>Tech:</strong> React, JavaScript, Bootstrap</p>
-                                    <p class="m-2"><strong>Overview:</strong> AI-powered investment guidance for crypto.</p>
-                                    <h4>Highlights:</h4>
-                                    <ul class="ms-3">
-                                        <li>Seamless UI with reusable components</li>
-                                        <li>Automates investment processes</li>
-                                    </ul>
-                                </div>
-                                <div class="project col">
-                                    <h4>3. <strong>RGCA </strong><b class="fs-5">(Rajiv Gandhi Centre for Aquaculture)</b></h4>
-                                    <p class="m-2"><strong>Tech:</strong> React.js, Material UI</p>
-                                    <p class="m-2"><strong>Overview:</strong> Enhancing RGCA's online presence.</p>
-                                    <h4>Highlights:</h4>
-                                    <ul class="ms-3">
-                                        <li>Responsive design</li>
-                                        <li>Resolved key usability issues</li>
-                                    </ul>
-                                </div>
-                                <div class="project col">
-                                    <h4>4. <strong>NFT Marketplace</strong></h4>
-                                    <p class="m-2"><strong>Tech:</strong> React, JavaScript, Web3</p>
-                                    <p class="m-2"><strong>Overview:</strong> Create and trade NFTs easily.</p>
-                                    <h4>Highlights:</h4>
-                                    <ul class="ms-3">
-                                        <li>Fully responsive interface</li>
-                                        <li>Supports multiple file types</li>
-                                    </ul>
-                                </div>
-                                <div class="project col">
-                                    <h4>5. <strong>Brugu App</strong></h4>
-                                    <p class="m-2"><strong>Tech:</strong> React Native</p>
-                                    <p class="m-2"><strong>Overview:</strong> A visually appealing mobile app.</p>
-                                    <h4>Highlights:</h4>
-                                    <ul class="ms-3">
-                                        <li>User-friendly design</li>
-                                        <li>Comprehensive functionalities</li>
-                                    </ul>
+                            <div class="d-none d-lg-block col-4 skill-div">
+                                <div class="skill-container">
+                                    <div class="orbit">
+                                        <img class="revolving-image rounded-4" src="assets/img/skills/html.png" alt="HTML" />
+                                        <img class="revolving-image rounded-4" src="assets/img/skills/css.png" alt="CSS" />
+                                        <img class="revolving-image rounded-4" src="assets/img/skills/bootstrap.png" alt="Bootstrap" />
+                                        <img class="revolving-image rounded-4" src="assets/img/skills/js.png" alt="JavaScript" />
+                                        <img class="revolving-image rounded-4" src="assets/img/skills/react.jpeg" alt="React.js" />
+                                        <img class="revolving-image rounded-4" src="assets/img/skills/reactnative.png" alt="React Native" />
+                                    </div>
+                                    <img width="90%" class="central-image rounded-circle" src="assets/img/skills/dev.jpeg" alt="Central Image" />
                                 </div>
                             </div>
                         </div>
-                        <div class="resume-item ">
-                            <h2 class="mb-2">Career Goals</h2>
-                            <p class="mb-2">Aiming to deepen expertise in frontend development, advance to a senior role, mentor others, and specialize in performance optimization while working on impactful projects.</p>
-                        </div>
-                        <div class="resume-item ">
-                            <h2 class="mb-2">Interests</h2>
-                            <p class="mb-2">Excited about exploring new technologies, improving web development skills, and sharing knowledge with the community.</p>
-                        </div>
                     </div>
-                </div>
-            </section>
-            <section id="services">
-                <div class="mx-3 mx-md-5">
-                    <h3 class="fs-1 fw-semibold">Services:</h3>
-                    <h3 class="">Web Development</h3>
-                    <p class="">I specialize in creating responsive, user-friendly websites that not only look great but also provide seamless functionality. Whether you need a personal blog, a corporate website, or an e-commerce platform, I can bring your vision to life with the latest technologies and best practices in web development.</p>
-                    <h3 class="">React Development</h3>
-                    <p class="">As a skilled React developer, I focus on building dynamic and efficient user interfaces. I leverage the power of React to create high-performance applications that are both scalable and maintainable. From single-page applications to complex web solutions, I ensure an engaging user experience that drives results.</p>
-                    <h3 class="">What I Can Do for You:</h3>
-                    <div class=" ms-4">
-                        <p><b>Custom Website Development:</b> Tailored solutions to fit your unique needs.</p>
-                        <p><b>Responsive Design:</b> Ensuring your website looks great on any device.</p>
-                        <p><b>E-commerce Solutions:</b> Build online stores that convert visitors into customers.</p>
-                        <p><b>React Applications:</b> Develop interactive web apps that provide a smooth user experience.</p>
-                        <p><b>Maintenance & Support:</b> Ongoing support to keep your website running smoothly.</p>
-                    </div>
-                    <p class="fs-5 mt-3">Let's collaborate to transform your ideas into a reality!</p>
-                </div>
-            </section>
-            <section id="contact">
-                <div class="mx-3 mx-md-5">
-                    <h3 class="fs-1 fw-semibold">Contact Me:</h3>
-                    <div class="row row-cols-1 row-cols-lg-2">
-                        <div class="col my-2">
-                            <div class="custom-box m-1 mt-5 m-lg-2 p-4 h-100">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center my-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-telephone-inbound-fill" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877zM15.854.146a.5.5 0 0 1 0 .708L11.707 5H14.5a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 1 0v2.793L15.146.146a.5.5 0 0 1 .708 0"/>
-                                          </svg>
-                                        <div class="fs-5">
-                                            <h4 class="ps-3">Call Me:</h4>
-                                            <p class="ps-3">+91 93472 81809</p>
-                                        </div>
+                </section>
+                <section id="resume">
+                    <div class="mx-3 mx-md-5">
+                        <h3 class="fs-1 fw-semibold">Resume:</h3>
+                        <div class="d-md-flex left-0 flex-wrap">
+                            <div class="d-flex justify-content-between w-100">
+                                <div class="resume-item ">
+                                    <h2>Education</h2>
+                                    <div class="mb-3">
+                                        <p class="mb-1"><strong>B.Tech in Electronics and Communication Engineering</strong></p>
+                                        <p class="mb-1">Aditya College of Engineering, Surrampalem</p>
+                                        <p class="mb-1">2018 - 2022</p>
                                     </div>
-                                    <div class="d-flex align-items-center my-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-at" viewBox="0 0 16 16">
-                                            <path d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914"/>
-                                          </svg>
-                                        <div class="fs-5">
-                                            <h4 class="ps-3">EMail</h4>
-                                            <p class="ps-3">sriharankandepalli@gmail.com</p>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center my-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
-                                        </svg>
-                                        <div class="fs-5">
-                                            <h4 class="ps-3">Address:</h4>
-                                            <p class="ps-3">Pithapuram,Kakinada District, Andhra Pradesh, India - 533450</p>
-                                        </div>
-                                    </div>
-                                    <div class="fs-5">
-                                        <h4 class="ps-3">Social Links:</h4>
-                                        <div class="social-icons m-3">
-                                            <a href="https://t.me/Sriharan_23" target="_blank">
-                                                <img src="assets/img/social/telegram.jpeg" alt="Telegram" class="icon">
-                                            </a>
-                                            <a href="https://wa.me/+919347281809" target="_blank">
-                                                <img src="assets/img/social/whatsapp.jpeg" alt="WhatsApp" class="icon">
-                                            </a>
-                                            <!-- <a href="https://www.instagram.com" target="_blank">
-                                                <img src="assets/img/social/telegram.png" alt="Instagram" class="icon">
-                                            </a> -->
-                                            <a href="https://www.linkedin.com/in/sriharan-kandepalli-432aa4228" target="_blank">
-                                                <img src="assets/img/social/linkedin.jpg" alt="LinkedIn" class="icon">
-                                            </a>
-                                            <a href="https://www.instagram.com/sriharan_23" target="_blank">
-                                                <img src="assets/img/social/instagram.jpg" alt="Instagram" class="icon">
-                                            </a>
-                                            <a href="https://www.linkedin.com/in/sriharan-kandepalli-432aa4228" target="_blank">
-                                                <img src="assets/img/social/x.jpeg" alt="LinkedIn" class="icon">
-                                            </a>
-                                        </div>
-                                        <!-- <div class="d-flex ">
-                                            <img class="w-50" src="assets/img/social/telegram.png" alt="">
-                                            <img class="w-50" src="assets/img/social/telegram.png" alt="">
-                                            <img class="w-50" src="assets/img/social/telegram.png" alt="">
-                                            <img class="w-50" src="assets/img/social/telegram.png" alt="">
-                                        </div> -->
+                                    <div class="mb-3">
+                                        <p class="mb-1"><strong>Intermediate in MPC</strong></p>
+                                        <p class="mb-1">Anjana Junior College, Pithapuram</p>
+                                        <p class="mb-1">2016 - 2018</p>
                                     </div>
                                 </div>
-                            </div>                           
-                        </div>
-                        <div class="col my-2">
-                            <div class="custom-box m-1 mt-5 m-lg-2 p-4 h-100">
-                                <div class="card-body">
-                                    <form id="contact-form">
-                                        <div class="m-2">
-                                            <label class="fs-5" for="name-field">Your Name:</label>
-                                            <input class="form-control" type="text" name="name" id="name-field" required>
-                                        </div>
-                                
-                                        <div class="m-2">
-                                            <label class="fs-5" for="email-field">Your Email:</label>
-                                            <input class="form-control" type="email" name="email" id="email-field" required>
-                                        </div>
-                                
-                                        <div class="m-2">
-                                            <label class="fs-5" for="subject-field">Subject:</label>
-                                            <input class="form-control" type="text" name="subject" id="subject-field" required>
-                                        </div>
-                                
-                                        <div class="m-2">
-                                            <label class="fs-5" for="message-field">Message:</label>
-                                            <textarea class="form-control" name="message" rows="5" id="message-field" required></textarea>
-                                        </div>
-                                
-                                        <div class="d-flex justify-content-end mt-4">
-                                            <button class="btn btn-outline-info btn-lg" type="submit">Send Message</button>
-                                        </div>
-                                    </form>
+                                <div class="resume-item ">
+                                    <h2>Professional Experience</h2>
+                                    <h4>Junior UI Developer</h4>
+                                    <p class="m-2"><strong>Brugu software solutions, Hyderabad</strong></p>
+                                    <p class="ms-2">[ jan 2023 - jan 2024 ]</p>
+                                    <ul>
+                                        <li>Responsible for creating websites with complete responsive UI.</li>
+                                        <li>Maintain website standards and version control.</li>
+                                    </ul>
                                 </div>
-                              </div>                              
+                            </div>
+                            <div>
+                                <h3><strong>Office Projects:</strong></h3>
+                                <div class="resume-item  row row-cols-1 row-cols-md-2">
+                                    <div class="project col">
+                                        <h4>1. <strong>CryptoBots AI</strong></h4>
+                                        <p class="m-2"><strong>Tech:</strong> React, JavaScript, Bootstrap</p>
+                                        <p class="m-2"><strong>Overview:</strong> AI-driven platform for cryptocurrency investment.</p>
+                                        <strong class="ms-2">Highlights:</strong>
+                                        <ul class="ms-3">
+                                            <li>Responsive single-page application</li>
+                                            <li>User-friendly for all experience levels</li>
+                                        </ul>
+                                    </div>
+                                    <div class="project col">
+                                        <h4>2. <strong>DYORAI</strong></h4>
+                                        <p class="m-2"><strong>Tech:</strong> React, JavaScript, Bootstrap</p>
+                                        <p class="m-2"><strong>Overview:</strong> AI-powered investment guidance for crypto.</p>
+                                        <strong class="ms-2">Highlights:</strong>
+                                        <ul class="ms-3">
+                                            <li>Seamless UI with reusable components</li>
+                                            <li>Automates investment processes</li>
+                                        </ul>
+                                    </div>
+                                    <div class="project col">
+                                        <h4>3. <strong>RGCA </strong><b class="fs-5">(Rajiv Gandhi Centre for Aquaculture)</b></h4>
+                                        <p class="m-2"><strong>Tech:</strong> React.js, Material UI</p>
+                                        <p class="m-2"><strong>Overview:</strong> Enhancing RGCA's online presence.</p>
+                                        <strong class="ms-2">Highlights:</strong>
+                                        <ul class="ms-3">
+                                            <li>Responsive design</li>
+                                            <li>Resolved key usability issues</li>
+                                        </ul>
+                                    </div>
+                                    <div class="project col">
+                                        <h4>4. <strong>NFT Marketplace</strong></h4>
+                                        <p class="m-2"><strong>Tech:</strong> React, JavaScript, Web3</p>
+                                        <p class="m-2"><strong>Overview:</strong> Create and trade NFTs easily.</p>
+                                        <strong class="ms-2">Highlights:</strong>
+                                        <ul class="ms-3">
+                                            <li>Fully responsive interface</li>
+                                            <li>Supports multiple file types</li>
+                                        </ul>
+                                    </div>
+                                    <div class="project col">
+                                        <h4>5. <strong>Brugu App</strong></h4>
+                                        <p class="m-2"><strong>Tech:</strong> React Native</p>
+                                        <p class="m-2"><strong>Overview:</strong> A visually appealing mobile app.</p>
+                                        <strong class="ms-2">Highlights:</strong>
+                                        <ul class="ms-3">
+                                            <li>User-friendly design</li>
+                                            <li>Comprehensive functionalities</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="resume-item ">
+                                <h2 class="mb-2">Career Goals</h2>
+                                <p class="mb-2">Aiming to deepen expertise in frontend development, advance to a senior role, mentor others, and specialize in performance optimization while working on impactful projects.</p>
+                            </div>
+                            <div class="resume-item ">
+                                <h2 class="mb-2">Interests</h2>
+                                <p class="mb-2">Excited about exploring new technologies, improving web development skills, and sharing knowledge with the community.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="blogs">
+                    <div class="mx-3 mx-md-5">
+                        <h3 class="fs-1 fw-semibold">Blogs:</h3>
+                        <div class="row my-3">
+                            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app"> <!-- Add appropriate filter class -->
+                                <div class="portfolio-content h-100">
+                                    <img src="assets/img/projects/dyorai.png" class="img-fluid" alt="">
+                                    <div class="portfolio-info text-light">
+                                        <h4><strong>DYORAI</strong></h4>
+                                        <p>AI-powered investment guidance for crypto.</p>
+                                        <a href="assets/img/projects/dyorai.png" title="DYORAI" data-glightbox="dyorai" class="glightbox preview-link">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-zoom-in" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0"/>
+                                                <path d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z"/>
+                                                <path fill-rule="evenodd" d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5"/>
+                                              </svg>
+                                        </a>
+                                        <a href="#" id="moreDetails" title="More Details" class="details-link ms-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
+                                                <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/>
+                                                <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/>
+                                              </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>                        
+                        </div>                    
+                    </div>                    
+                </section>
+                <section id="services">
+                    <div class="mx-3 mx-md-5">
+                        <h3 class="fs-1 fw-semibold">Services:</h3>
+                        <h3 class="">Web Development</h3>
+                        <p class="">I specialize in creating responsive, user-friendly websites that not only look great but also provide seamless functionality. Whether you need a personal blog, a corporate website, or an e-commerce platform, I can bring your vision to life with the latest technologies and best practices in web development.</p>
+                        <h3 class="">React Development</h3>
+                        <p class="">As a skilled React developer, I focus on building dynamic and efficient user interfaces. I leverage the power of React to create high-performance applications that are both scalable and maintainable. From single-page applications to complex web solutions, I ensure an engaging user experience that drives results.</p>
+                        <h3 class="">What I Can Do for You:</h3>
+                        <div class=" ms-4">
+                            <p><b>Custom Website Development:</b> Tailored solutions to fit your unique needs.</p>
+                            <p><b>Responsive Design:</b> Ensuring your website looks great on any device.</p>
+                            <p><b>E-commerce Solutions:</b> Build online stores that convert visitors into customers.</p>
+                            <p><b>React Applications:</b> Develop interactive web apps that provide a smooth user experience.</p>
+                            <p><b>Maintenance & Support:</b> Ongoing support to keep your website running smoothly.</p>
+                        </div>
+                        <p class="fs-5 mt-3">Let's collaborate to transform your ideas into a reality!</p>
+                    </div>
+                </section>
+                <section id="contact">
+                    <div class="mx-3 mx-md-5 mb-5">
+                        <h3 class="fs-1 fw-semibold">Contact Me:</h3>
+                        <div class="row row-cols-1 row-cols-lg-2">
+                            <div class="col my-2">
+                                <div class="custom-box m-1 mt-5 m-lg-2 p-4 h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex gap-2 my-2">
+                                            <div class="mt-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="20" fill="currentColor" class="bi bi-telephone-inbound-fill" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877zM15.854.146a.5.5 0 0 1 0 .708L11.707 5H14.5a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 1 0v2.793L15.146.146a.5.5 0 0 1 .708 0"/>
+                                                </svg>
+                                            </div>
+                                            <div class="fs-5">
+                                                <h4>Call Me:</h4>
+                                                <p>+91 93472 81809</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex gap-2 my-2">
+                                            <div class="mt-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="30" fill="currentColor" class="bi bi-at" viewBox="0 0 16 16">
+                                                    <path d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914"/>
+                                                </svg>
+                                            </div>
+                                            <div class="fs-5">
+                                                <h4>EMail</h4>
+                                                <p>sriharankandepalli@gmail.com</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex gap-2 my-2">
+                                            <div class="mt-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="20" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                                                </svg>
+                                            </div>
+                                            <div class="fs-5">
+                                                <h4>Address:</h4>
+                                                <p>Pithapuram,Kakinada District, Andhra Pradesh, India - 533450</p>
+                                            </div>
+                                        </div>
+                                        <div class="fs-5">
+                                            <h4 class="ps-3">Social Links:</h4>
+                                            <div class="social-icons m-3">
+                                                <a href="https://t.me/Sriharan_23" target="_blank">
+                                                    <img src="assets/img/social/telegram.jpeg" alt="Telegram" class="icon">
+                                                </a>
+                                                <a href="https://wa.me/+919347281809" target="_blank">
+                                                    <img src="assets/img/social/whatsapp.jpeg" alt="WhatsApp" class="icon">
+                                                </a>
+                                                <!-- <a href="https://www.instagram.com" target="_blank">
+                                                    <img src="assets/img/social/telegram.png" alt="Instagram" class="icon">
+                                                </a> -->
+                                                <a href="https://www.linkedin.com/in/sriharan-kandepalli-432aa4228" target="_blank">
+                                                    <img src="assets/img/social/linkedin.jpg" alt="LinkedIn" class="icon">
+                                                </a>
+                                                <a href="https://www.instagram.com/sriharan_23" target="_blank">
+                                                    <img src="assets/img/social/instagram.jpg" alt="Instagram" class="icon">
+                                                </a>
+                                                <a href="https://www.linkedin.com/in/sriharan-kandepalli-432aa4228" target="_blank">
+                                                    <img src="assets/img/social/x.jpeg" alt="LinkedIn" class="icon">
+                                                </a>
+                                            </div>
+                                            <!-- <div class="d-flex ">
+                                                <img class="w-50" src="assets/img/social/telegram.png" alt="">
+                                                <img class="w-50" src="assets/img/social/telegram.png" alt="">
+                                                <img class="w-50" src="assets/img/social/telegram.png" alt="">
+                                                <img class="w-50" src="assets/img/social/telegram.png" alt="">
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </div>                           
+                            </div>
+                            <div class="col my-2">
+                                <div class="custom-box m-1 mt-5 m-lg-2 p-4 h-100">
+                                    <div class="card-body">
+                                        <form id="contact-form">
+                                            <div class="m-2">
+                                                <label class="fs-5" for="name-field">Your Name:</label>
+                                                <input class="form-control" type="text" name="name" id="name-field" required>
+                                            </div>
+                                    
+                                            <div class="m-2">
+                                                <label class="fs-5" for="email-field">Your Email:</label>
+                                                <input class="form-control" type="email" name="email" id="email-field" required>
+                                            </div>
+                                    
+                                            <div class="m-2">
+                                                <label class="fs-5" for="subject-field">Subject:</label>
+                                                <input class="form-control" type="text" name="subject" id="subject-field" required>
+                                            </div>
+                                    
+                                            <div class="m-2">
+                                                <label class="fs-5" for="message-field">Message:</label>
+                                                <textarea class="form-control" name="message" rows="5" id="message-field" required></textarea>
+                                            </div>
+                                    
+                                            <div class="d-flex justify-content-end mt-4">
+                                                <button class="btn btn-outline-info btn-lg" type="submit">Send Message</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>                              
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- <div style="height: 100px;">
+                </div> -->
+                <button onclick="topFunction()" id="myBtn" title="Go to top">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+                    </svg>
+                </button>
+                <div id="toast" class="toast opacity-100"></div>
+            </div>
+        </div>
+        <div id="moreContent" class="moreContent">
+            <div class="mx-3 mt-5 py-3">
+                <div class="breadcrumb">
+                    <p>
+                        <a class="back" href="#blogs" onclick="toggleContent(); return false;" >Back to Blogs</a> /
+                        <a href="" class="active disabled" onclick="event.preventDefault();">Blogs preview</a>
+                    </p>
+                </div>
+                <div class="custom-box1 m-lg-2 p-4">
+                    <div class="card-body row">
+                        <div class="col-md-8">
+                            <h4 class="fs-1">DYORAI Overview</h4>
+                            <h4 class="fs-2">1. Overview of DYORAI</h4>
+                            <p>
+                                <strong>Definition:</strong> DYORAI stands for "Do Your Own Research Artificial Intelligence," a tool designed to automate the research process in cryptocurrency investments.<br>
+                                <strong>Purpose:</strong> It aims to assist investors in making informed decisions by providing comprehensive analyses without requiring extensive manual research.
+                            </p>
+                            <h4 class="fs-2">2. Key Features</h4>
+                            <ul>
+                                <li><strong>Sentimental Analysis:</strong> Evaluates the overall sentiment around a cryptocurrency on social media platforms.</li>
+                                <li><strong>Social Media Activity:</strong> Insights into the project's presence and engagement on social media.</li>
+                                <li><strong>Legitimacy Checks:</strong> Analyzes the authenticity of social media accounts linked to projects.</li>
+                                <li><strong>Community Verification:</strong> Determines the authenticity of communities on platforms like Telegram and Discord.</li>
+                                <li><strong>Fundamental Analysis:</strong> Offers insights into the project's technology, team, roadmap, and financials.</li>
+                                <li><strong>Tokenomics:</strong> Examines the economic aspects of the cryptocurrency, including supply and distribution.</li>
+                                <li><strong>Market Activity:</strong> Reviews trading volumes and trends.</li>
+                                <li><strong>Security Assessments:</strong> Checks contracts for security vulnerabilities.</li>
+                                <li><strong>Team Information:</strong> Provides details on the project's leadership.</li>
+                                <li><strong>Future Events:</strong> Highlights upcoming milestones that could impact the project.</li>
+                            </ul>
+                            <h4 class="fs-2">3. AI Wallet Score</h4>
+                            <p>
+                                <strong>Functionality:</strong> Automatically analyzes a user's crypto portfolio and assigns a score based on various factors, such as token security, market activity, and community legitimacy.<br>
+                                <strong>Benefits:</strong> Helps investors track portfolio performance and identify potential weaknesses.
+                            </p>
+                            <h4 class="fs-2">4. User Experience</h4>
+                            <p>
+                                <strong>Ease of Use:</strong> The tool is designed for all investor levels, requiring no technical knowledge.<br>
+                                <strong>Efficiency:</strong> Saves time by automating the research process, providing insights quickly.
+                            </p>
+                            <h4 class="fs-2">5. Disclaimer</h4>
+                            <p>
+                                <strong>Non-Advisor:</strong> DYORAI is not a financial advisor; it's a research tool. Users are encouraged to conduct their own due diligence and seek independent financial advice.
+                            </p>
+                            <h4 class="fs-2">6. Partnership Opportunities</h4>
+                            <p>
+                                <strong>Affiliate Program:</strong> Information for potential partners to join the DYORAI affiliate program.
+                            </p>
+                            <h4 class="fs-2">7. Frequently Asked Questions</h4>
+                            <p>
+                                Covers common inquiries about DYORAI, including how it works, its accuracy, and its comparison to other tools.
+                            </p>
+                            <h4 class="fs-2">Conclusion</h4>
+                            <p>
+                                DYORAI is positioned as a transformative tool for crypto investors, streamlining the research process and enabling more informed investment decisions through AI-driven analyses. It aims to reduce the burden of research, making it accessible to a broader audience while encouraging responsible investing practices.
+                            </p>
                         </div>
                     </div>
                 </div>
-            </section>
-            <!-- <div style="height: 100px;">
-            </div> -->
-            <button onclick="topFunction()" id="myBtn" title="Go to top">
-                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
-                </svg>
-            </button>
+            </div>
         </div>
     </div>
 
@@ -457,12 +559,13 @@
                     if (scrollTop > navScrollTop) {
                         let navbarScroll = '-60px'; // Hide navbar
                         document.documentElement.style.setProperty('--top-nav-scroll', navbarScroll);
-            // console.log("navbarScroll",navbarScroll);
+                        // document.documentElement.style.setProperty('--my-div-top', '-60px');
                     } else {
                         // Scrolling up
                         // navbar.style.top = '0'; // Show navbar
                         let navbarScroll = '0'; // Hide navbar
                         document.documentElement.style.setProperty('--top-nav-scroll', navbarScroll);
+                        // document.documentElement.style.setProperty('--my-div-top', '60px');
             // console.log("navbarScroll",navbarScroll);
         }
                 }
@@ -487,5 +590,36 @@
         // Run on window resize
         window.onresize = getDivWidth;
       </script> -->
+
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script>
+    //     document.getElementById('moreDetails').onclick = function() {
+    //     document.getElementById('moreContent').classList.add('d-block');
+    //     document.getElementById('moreContent').style.marginTop = '60px';
+    //     document.getElementById('section').classList.add('d-none');
+    //     this.style.display = 'none';
+    //     document.documentElement.style.setProperty('--top-nav-scroll', '0');
+    // };
+    
+    // function toggleContent() {
+    //     document.getElementById('moreContent').classList.add('d-none');
+    //     document.getElementById('section').classList.add('d-block');
+    //     document.getElementById('moreDetails').classList.add('d-inline');
+    // }
+    document.getElementById('moreDetails').onclick = function() {
+    document.getElementById('moreContent').classList.add('d-block');
+    document.getElementById('section').classList.add('d-none');
+        document.getElementById('moreContent').style.marginTop = '60px';
+    this.style.display = 'none';
+        document.documentElement.style.setProperty('--top-nav-scroll', '0');
+};
+
+function toggleContent() {
+    document.getElementById('moreContent').classList.add('d-none');
+    document.getElementById('section').classList.remove('d-none'); // Use remove to show section
+    document.getElementById('moreDetails').classList.add('d-inline');
+    window.location.href = '#blogs'; // Replace with your desired URL
+}
+    </script>
 </body>
 </html>

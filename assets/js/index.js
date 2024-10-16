@@ -89,7 +89,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
+function closeNav(){
+    setTimeout(() => {
+        document.documentElement.style.setProperty('--top-nav-scroll', '-60px');
+    }, 750);
+}
   
 /* offcanvas closing */
    let lastScrollTop = 0;
@@ -128,16 +132,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
 /* sidebar */
-// document.querySelectorAll('.nav-link').forEach(link => {
-//     link.addEventListener('click', function() {
-//         // Remove active class from all links
-//         document.querySelectorAll('.nav-link').forEach(item => {
-//             item.classList.remove('active');
-//         });
-//         // Add active class to the clicked link
-//         this.classList.add('active');
-//     });
-// });
+const links = [
+    { href: '#home', text: 'Home' },
+    { href: '#about', text: 'About' },
+    { href: '#skills', text: 'Skills' },
+    { href: '#resume', text: 'Resume' },
+    { href: '#blogs', text: 'Blogs' },
+    { href: '#services', text: 'Services' },
+    { href: '#contact', text: 'Contact' },
+];
+
+const navDiv = document.getElementById('nav');
+const dynamicLink = document.getElementById('dynamicLink');
+
+links.forEach(link => {
+    const newLink = dynamicLink.cloneNode(true);
+    newLink.href = link.href;
+    newLink.textContent = link.text;
+    if(link.text!='Home'){
+        newLink.onclick = () => closeNav(); // Keep your closeNav function
+    }
+    navDiv.appendChild(newLink);
+});
+
+// Optionally, you can remove the original dynamicLink if you don't want it to appear
+dynamicLink.remove();
+
 /* home */const names = ["Frontend Developer", "Mobile App Developer", "Responsive UI/UX Developer", "Freelancer" ];
 let currentIndex = 0;
 let currentName = "";
@@ -231,7 +251,7 @@ images.forEach(img => {
 //     emailjs.init("41WB_jOmxMfvuw542"); // Replace with your EmailJS user ID
 // })();
 (function(){
-    emailjs.init({publicKey: "41WB_jOmxMfvuw542"});
+    emailjs.init({publicKey: "7MfKcnbKWiwJl-Pis"});
  })();
 
 document.getElementById("contact-form").addEventListener("submit", function(event) {
@@ -240,15 +260,37 @@ document.getElementById("contact-form").addEventListener("submit", function(even
     const templateParams = {
         from_name: document.getElementById("name-field").value,
         from_email: document.getElementById("email-field").value,
+        to_mail: "sriharankandepalli@gmail.com",
         subject: document.getElementById("subject-field").value,
         message: document.getElementById("message-field").value
     };
 
-    emailjs.send('service_kshn234', 'template_y7feo1i', templateParams)
+    emailjs.send('service_73o1p4c', 'template_vfg2x78', templateParams)
         .then(function(response) {
             console.log('Your message has been sent. Thank you!',response);
             document.getElementById("contact-form").reset();
+            showToast('Your message has been sent. Thank you!')
         }, function(error) {
             console.log('Error: Unable to send email.',error);
+            showToast('Error: Unable to send email.')
         });
 });
+
+/* blogs */
+    const lightbox = GLightbox({
+        selector: '.glightbox', // Ensures that it only targets elements with the glightbox class
+        loop: true, // Enable looping through images
+    });
+
+
+
+/* toast */
+function showToast(message) {
+    const toast = document.getElementById('toast');
+    toast.textContent = message; // Set the toast message
+    toast.className = 'toast show';
+    
+    setTimeout(() => {
+        toast.className = toast.className.replace('show', '');
+    }, 5000); // Toast will disappear after 3 seconds
+}
