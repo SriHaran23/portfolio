@@ -6,6 +6,8 @@ function getDivHeight() {
   
     // Set the width as a CSS variable
     document.documentElement.style.setProperty('--my-div-height', `${height}px`);
+    document.documentElement.style.setProperty('--my-screen-width', `${window.innerWidth}px`);
+    document.documentElement.style.setProperty('--my-screen-height', `${height}px`);
   }
   
     window.onload = getDivHeight;
@@ -153,12 +155,14 @@ links.forEach(link => {
         newLink.onclick = () => closeNav(); // Keep your closeNav function
     }
     navDiv.appendChild(newLink);
+    // dynamicLink.href(link.href)
 });
 
 // Optionally, you can remove the original dynamicLink if you don't want it to appear
 dynamicLink.remove();
 
-/* home */const names = ["Frontend Developer", "Mobile App Developer", "Responsive UI/UX Developer", "Freelancer" ];
+/* home */
+const names = ["Frontend Developer", "Mobile App Developer", "Responsive UI/UX Developer", "Freelancer"];
 let currentIndex = 0;
 let currentName = "";
 let charIndex = 0;
@@ -166,7 +170,13 @@ const typingSpeed = 50; // Typing speed in milliseconds
 const backspacingSpeed = 50; // Backspacing speed in milliseconds
 const pauseDuration = 1000; // Pause duration after a name
 
+function updateCursorAnimation(duration) {
+    document.getElementById("cursor").style.animationDuration = duration + 'ms';
+}
+
 function typeName() {
+    document.getElementById("cursor").style.display = "inline"; // Show cursor
+    updateCursorAnimation(typingSpeed * 10); // Adjust blink duration based on typing speed
     if (currentIndex < names.length) {
         if (charIndex < names[currentIndex].length) {
             currentName += names[currentIndex].charAt(charIndex);
@@ -187,6 +197,8 @@ function typeName() {
 }
 
 function backspaceName() {
+    document.getElementById("cursor").style.display = "inline"; // Show cursor
+    updateCursorAnimation(backspacingSpeed * 10); // Adjust blink duration based on backspacing speed
     if (charIndex > 0) {
         currentName = currentName.slice(0, -1);
         document.getElementById("output").innerText = currentName;
@@ -196,11 +208,15 @@ function backspaceName() {
         // Move to the next name after backspacing
         currentIndex++;
         charIndex = 0;
-        setTimeout(typeName, typingSpeed); // Start typing the next name
+        setTimeout(() => {
+            document.getElementById("cursor").style.display = "none"; // Hide cursor before typing next name
+            typeName(); // Start typing the next name
+        }, typingSpeed); // Slight delay to hide cursor
     }
 }
 
 typeName();
+
 
 // const scrollContainer = document.querySelector('.scroll-content');
 
@@ -281,8 +297,7 @@ document.getElementById("contact-form").addEventListener("submit", function(even
         selector: '.glightbox', // Ensures that it only targets elements with the glightbox class
         loop: true, // Enable looping through images
     });
-
-
+    
 
 /* toast */
 function showToast(message) {

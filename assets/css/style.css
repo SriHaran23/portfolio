@@ -4,6 +4,8 @@
     --my-div-height: 0; /* Default value */
     --my-section-width: calc(100vw - var(--my-div-width)); /* Remaining width of the screen */
     --top-nav-scroll:0;
+    --my-screen-width:0;
+    --my-screen-height:0;
   }
   
 html {
@@ -83,6 +85,12 @@ body{
     padding: 20px; /* Padding for content */
     color: white !important;
 }
+.navbar {
+    transition: top 0.3s;
+}
+#navbar.hidden {
+    top: -100px; /* Adjust this value based on your navbar height */
+}
 .navbar.hidden {
     transform: translateY(-100%);
     transition: transform 0.3s ease;
@@ -123,6 +131,21 @@ body{
     background-repeat: no-repeat;
     opacity: 0.4; /* Adjust opacity (0.0 to 1.0) */
 }
+.cursor {
+    display: inline-block; /* Ensure it behaves like text */
+    animation: blink 1s step-end infinite; /* Blinking effect */
+    color: white; /* Adjust based on your text color */
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1; /* Visible */
+    }
+    75% {
+        opacity: 0; /* Invisible */
+    }
+}
+
     /* #output {
     font-family: monospace;
     white-space: nowrap;
@@ -290,11 +313,6 @@ body{
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Add box shadow */
     border-radius: 8px; /* Optional: rounded corners */
   }
-  .custom-box1 {
-    border: none;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.459); /* Add box shadow */
-    border-radius: 8px; /* Optional: rounded corners */
-  }
 
   /* topbutton */
   #myBtn {
@@ -357,6 +375,11 @@ body{
     .moreContent{
         margin-left: 0;
     }
+    .modal-img{
+        width: var(--my-screen-width);
+        height: var(--my-screen-height);
+        object-fit: contain;
+    }
 }
 
 /* toast */
@@ -405,7 +428,7 @@ body{
     opacity: 0;
     position: absolute;
     inset: 0;
-    z-index: 3;
+    /* z-index: 1; */
     transition: all ease-in-out 0.3s;
     background: rgba(0, 0, 0, 0.76);
     padding: 15px;
@@ -444,13 +467,82 @@ body{
     line-height: 0;
   }
 
-  .moreContent {
+  /* .moreContent {
     margin-left: var(--my-div-width);
     margin-top: var(--my-div-top);
     transition: margin-left 0.3s ease;
+} */
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-img {
+    display: block;
+    width: 100%;  /* Use viewport minimum to maintain a square shape */
+    height: var(--my-screen-height); /* This will ensure the image fits in a square */
+    object-fit: contain;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
 }
 
 #moreContent { display: none; }
-.breadcrumb { margin: 10px 0; }
 .breadcrumb .back { text-decoration: none; color: black;}
 .breadcrumb .back:hover { text-decoration: underline; color: blue; }
+.breadcrumb {
+    position: fixed; /* Fix the position at the top */
+     top: 0px; 
+    /* left: var(--my-div-width); */
+    right: 0;
+    margin: 0; /* Remove any margin */
+    z-index: 1000; /* Keep it above other elements */
+    padding: 10px; /* Add some padding */
+}
+
+/* Existing styles for custom-box1 */
+.custom-box1 {
+    overflow-y: auto; /* Allow scrolling */
+    position: relative; /* Establish a positioning context */
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.459);
+    border-radius: 8px;
+}
+
+
+/* .portfolio-item { display: none; }  */
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .portfolio-filters li {
+    color: black;
+    cursor: pointer;
+    display: inline-block;
+    text-transform: uppercase;  
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .portfolio-filters li:hover {
+    text-decoration: underline;
+  }
+  .portfolio-filters .filter-active{
+    color: blue;
+    text-decoration: underline;
+    font-weight: 500;
+  }
