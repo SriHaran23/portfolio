@@ -139,7 +139,7 @@ const links = [
     { href: '#about', text: 'About' },
     { href: '#skills', text: 'Skills' },
     { href: '#resume', text: 'Resume' },
-    { href: '#blogs', text: 'Blogs' },
+    // { href: '#blogs', text: 'Blogs' },
     { href: '#services', text: 'Services' },
     { href: '#contact', text: 'Contact' },
 ];
